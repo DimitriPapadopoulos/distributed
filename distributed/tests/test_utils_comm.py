@@ -7,7 +7,6 @@ from unittest import mock
 import pytest
 
 from dask._task_spec import TaskRef
-
 from distributed import wait
 from distributed.compatibility import asyncio_run
 from distributed.config import get_loop_factory

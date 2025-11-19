@@ -8,7 +8,6 @@ from collections import defaultdict
 from typing import TYPE_CHECKING, Any
 
 from dask.typing import Key
-
 from distributed.core import ErrorMessage, OKMessage, error_message
 from distributed.diagnostics.plugin import SchedulerPlugin
 from distributed.metrics import time

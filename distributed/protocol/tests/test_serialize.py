@@ -14,7 +14,6 @@ except ImportError:
     np = None  # type: ignore
 
 import dask
-
 from distributed import Nanny, wait
 from distributed.comm.utils import from_frames, to_frames
 from distributed.protocol import (
@@ -207,7 +206,6 @@ def test_serialize_iterate_collection():
 
 
 from dask import delayed
-
 from distributed.utils_test import gen_cluster
 
 

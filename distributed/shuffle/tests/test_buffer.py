@@ -7,7 +7,6 @@ from collections import defaultdict
 import pytest
 
 from dask.utils import parse_bytes
-
 from distributed.shuffle._buffer import ShardsBuffer
 from distributed.shuffle._limiter import ResourceLimiter
 from distributed.utils import wait_for

@@ -17,7 +17,6 @@ from tornado.httpclient import AsyncHTTPClient, HTTPRequest
 
 import dask
 from dask.core import flatten
-
 from distributed import Event
 from distributed.client import wait
 from distributed.core import Status

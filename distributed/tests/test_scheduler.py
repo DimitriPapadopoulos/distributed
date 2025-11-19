@@ -28,7 +28,6 @@ from dask.base import DaskMethodsMixin
 from dask.core import flatten
 from dask.highlevelgraph import HighLevelGraph, MaterializedLayer
 from dask.utils import parse_timedelta, tmpfile, typename
-
 from distributed import (
     Client,
     Event,

@@ -33,7 +33,6 @@ import dask
 from dask._task_spec import Task
 from dask.typing import Key
 from dask.utils import key_split, parse_bytes, typename
-
 from distributed._stories import worker_story
 from distributed.collections import HeapSet
 from distributed.comm import get_address_host

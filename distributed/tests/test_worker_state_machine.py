@@ -10,9 +10,8 @@ from time import sleep
 import pytest
 from tlz import first
 
-from dask.sizeof import sizeof
-
 import distributed.profile as profile
+from dask.sizeof import sizeof
 from distributed import Nanny, Worker, wait
 from distributed.compatibility import MACOS, WINDOWS
 from distributed.protocol.serialize import Serialize

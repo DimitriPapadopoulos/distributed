@@ -13,7 +13,6 @@ from unittest import mock
 import pytest
 
 import dask
-
 from distributed import profile
 from distributed.compatibility import WINDOWS
 from distributed.diskutils import WorkSpace

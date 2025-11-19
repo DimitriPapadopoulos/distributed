@@ -5,7 +5,6 @@ from typing import TYPE_CHECKING
 
 from dask._task_spec import GraphNode
 from dask.typing import Key
-
 from distributed.shuffle._core import ShuffleId, get_worker_plugin
 from distributed.shuffle._shuffle import shuffle_transfer
 

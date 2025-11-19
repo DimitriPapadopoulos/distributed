@@ -11,7 +11,6 @@ from unittest import mock
 import pytest
 
 import dask
-
 from distributed import Client, Nanny, Scheduler, Worker
 from distributed.preloading import Preload
 from distributed.utils import open_port

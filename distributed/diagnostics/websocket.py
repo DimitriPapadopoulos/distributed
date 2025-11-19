@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dask.utils import key_split
-
 from distributed.diagnostics.plugin import SchedulerPlugin
 from distributed.diagnostics.task_stream import colors
 

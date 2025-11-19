@@ -10,7 +10,6 @@ import pytest
 
 import dask
 from dask import delayed
-
 from distributed import (
     Client,
     as_completed,

@@ -10,7 +10,6 @@ import pytest
 from tornado import ioloop
 
 import dask
-
 from distributed.comm import (
     CommClosedError,
     connect,

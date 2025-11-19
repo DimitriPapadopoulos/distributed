@@ -10,7 +10,6 @@ from typing import Any
 
 import dask
 import dask.config
-
 from distributed.deploy.spec import ProcessInterface, SpecCluster
 
 logger = logging.getLogger(__name__)

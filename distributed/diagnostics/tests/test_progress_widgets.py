@@ -6,7 +6,6 @@ from operator import add
 import pytest
 
 from dask.utils import key_split
-
 from distributed.client import wait
 from distributed.spans import span
 from distributed.utils_test import dec, gen_cluster, gen_tls_cluster, inc, throws

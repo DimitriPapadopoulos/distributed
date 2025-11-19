@@ -3,7 +3,6 @@ from __future__ import annotations
 import pytest
 
 import dask
-
 from distributed import Worker
 from distributed.comm import CommClosedError
 from distributed.utils_test import (

@@ -8,7 +8,6 @@ import warnings
 import pytest
 
 import dask
-
 from distributed import Client, Scheduler, Worker
 from distributed.comm import connect, listen, ws
 from distributed.comm.core import FatalCommClosedError

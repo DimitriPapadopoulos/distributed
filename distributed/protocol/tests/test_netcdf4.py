@@ -6,7 +6,6 @@ netCDF4 = pytest.importorskip("netCDF4")
 np = pytest.importorskip("numpy")
 
 from dask.utils import tmpfile
-
 from distributed.protocol import deserialize, serialize
 
 
@@ -78,7 +77,6 @@ def test_serialize_deserialize_group():
 
 
 import dask.array as da
-
 from distributed.utils_test import gen_cluster
 
 

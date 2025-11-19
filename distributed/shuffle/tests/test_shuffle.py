@@ -20,7 +20,6 @@ from tornado.ioloop import IOLoop
 
 import dask
 from dask.utils import key_split
-
 from distributed.comm.core import Comm
 from distributed.shuffle._core import ShuffleId, ShuffleRun, barrier_key
 from distributed.shuffle._disk import DiskShardsBuffer
@@ -31,7 +30,6 @@ pd = pytest.importorskip("pandas")
 
 import dask.dataframe as dd
 from dask.typing import Key
-
 from distributed import (
     Client,
     Event,

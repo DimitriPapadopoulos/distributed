@@ -8,7 +8,6 @@ import pytest
 
 import dask
 from dask import delayed
-
 from distributed import Client, Event, Scheduler, Status, Worker, wait
 from distributed.utils_test import gen_cluster, inc, slowinc
 

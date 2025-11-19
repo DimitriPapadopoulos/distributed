@@ -5,7 +5,6 @@ import logging
 from tlz import merge, valmap
 
 from dask.utils import key_split
-
 from distributed.core import coerce_to_address, connect
 from distributed.diagnostics.progress import AllProgress
 from distributed.utils import color_of

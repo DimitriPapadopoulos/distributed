@@ -3,7 +3,6 @@ from __future__ import annotations
 import logging
 
 from dask.core import validate_key
-
 from distributed.client import Future, futures_of, wait
 from distributed.protocol.serialize import ToPickle
 from distributed.utils import sync

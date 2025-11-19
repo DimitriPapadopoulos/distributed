@@ -21,7 +21,6 @@ from tornado.tcpserver import TCPServer
 
 import dask
 from dask.utils import parse_timedelta
-
 from distributed.comm.addressing import parse_host_port, unparse_host_port
 from distributed.comm.core import (
     BaseListener,

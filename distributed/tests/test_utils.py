@@ -24,7 +24,6 @@ import pytest
 from tornado.ioloop import IOLoop
 
 import dask
-
 from distributed.compatibility import MACOS, WINDOWS, asyncio_run
 from distributed.config import get_loop_factory
 from distributed.metrics import time

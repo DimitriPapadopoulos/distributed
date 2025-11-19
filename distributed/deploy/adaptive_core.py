@@ -10,7 +10,6 @@ from typing import TYPE_CHECKING, cast
 import tlz as toolz
 
 import dask.config
-
 from distributed.metrics import time
 
 if TYPE_CHECKING:

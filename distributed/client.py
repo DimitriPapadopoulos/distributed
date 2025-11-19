@@ -51,6 +51,7 @@ from tornado import gen
 from tornado.ioloop import IOLoop
 
 import dask
+import distributed.utils
 from dask._expr import Expr, HLGExpr, LLGExpr
 from dask._task_spec import DataNode, GraphNode, List, Task, TaskRef, parse_input
 from dask.base import collections_to_expr
@@ -68,8 +69,6 @@ from dask.utils import (
     typename,
 )
 from dask.widgets import get_template
-
-import distributed.utils
 from distributed import cluster_dump, preloading
 from distributed import versions as version_module
 from distributed.batched import BatchedSend

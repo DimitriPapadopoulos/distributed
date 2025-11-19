@@ -6,7 +6,6 @@ import uuid
 from collections import defaultdict
 
 from dask.utils import parse_timedelta
-
 from distributed.client import Future
 from distributed.utils import Deadline, wait_for
 from distributed.worker import get_client

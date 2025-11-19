@@ -14,7 +14,6 @@ from tornado.websocket import WebSocketHandler
 import dask
 from dask.typing import Key
 from dask.utils import format_bytes, format_time
-
 from distributed.diagnostics.websocket import WebsocketPlugin
 from distributed.http.utils import RequestHandler, redirect
 from distributed.metrics import time

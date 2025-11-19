@@ -7,7 +7,6 @@ np = pytest.importorskip("numpy")
 
 from dask.dataframe.utils import assert_eq
 from dask.utils import ensure_bytes
-
 from distributed.protocol import (
     decompress,
     deserialize,

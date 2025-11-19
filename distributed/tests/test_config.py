@@ -13,7 +13,6 @@ import pytest
 import yaml
 
 import dask.config
-
 from distributed.config import initialize_logging
 from distributed.utils_test import captured_handler, new_config, new_config_file
 

@@ -8,7 +8,6 @@ from time import sleep
 import pytest
 
 import dask
-
 from distributed import (
     Actor,
     BaseActorFuture,

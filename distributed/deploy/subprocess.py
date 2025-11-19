@@ -17,7 +17,6 @@ import psutil
 import toolz
 
 from dask.system import CPU_COUNT
-
 from distributed.compatibility import WINDOWS
 from distributed.deploy.spec import ProcessInterface, SpecCluster
 from distributed.deploy.utils import nprocesses_nthreads

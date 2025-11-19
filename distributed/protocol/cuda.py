@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import dask
 from dask.utils import typename
-
 from distributed.protocol import pickle
 from distributed.protocol.serialize import (
     ObjectDictSerializer,

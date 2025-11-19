@@ -9,7 +9,6 @@ from typing import Literal, NamedTuple, Protocol, cast
 
 import zict
 from dask.typing import Key
-
 from distributed.metrics import context_meter
 from distributed.protocol import deserialize_bytes, serialize_bytelist
 from distributed.protocol.compression import get_compression_settings

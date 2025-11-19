@@ -7,7 +7,6 @@ from collections import defaultdict
 import pytest
 
 from dask.utils import parse_bytes
-
 from distributed.shuffle._comms import CommShardsBuffer
 from distributed.shuffle._limiter import ResourceLimiter
 from distributed.utils_test import gen_test

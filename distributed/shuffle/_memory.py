@@ -5,7 +5,6 @@ from collections.abc import Callable
 from typing import Any
 
 from dask.sizeof import sizeof
-
 from distributed.shuffle._buffer import ShardsBuffer
 from distributed.shuffle._exceptions import DataUnavailable
 from distributed.shuffle._limiter import ResourceLimiter

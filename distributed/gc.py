@@ -10,7 +10,6 @@ from typing import Final
 import psutil
 
 from dask.utils import format_bytes
-
 from distributed.metrics import thread_time
 from distributed.utils import RateLimiterFilter
 

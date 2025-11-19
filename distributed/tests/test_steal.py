@@ -17,7 +17,6 @@ from tlz import merge, sliding_window
 
 import dask
 from dask.utils import key_split, parse_bytes
-
 from distributed import (
     Client,
     Event,

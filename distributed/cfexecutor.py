@@ -7,7 +7,6 @@ from tlz import merge
 from tornado import gen
 
 from dask.utils import parse_timedelta
-
 from distributed.metrics import time
 from distributed.utils import TimeoutError, sync
 

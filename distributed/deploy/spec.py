@@ -18,7 +18,6 @@ from tornado.ioloop import IOLoop
 import dask
 from dask.utils import parse_bytes, parse_timedelta
 from dask.widgets import get_template
-
 from distributed.core import Status, rpc
 from distributed.deploy.adaptive import Adaptive
 from distributed.deploy.cluster import Cluster

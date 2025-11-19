@@ -9,7 +9,6 @@ from time import sleep
 import pytest
 
 import dask
-
 import distributed
 from distributed import Event, Reschedule, Scheduler, Worker, get_worker, wait
 from distributed.compatibility import WINDOWS

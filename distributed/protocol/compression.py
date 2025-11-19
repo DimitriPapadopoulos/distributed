@@ -17,7 +17,6 @@ from packaging.version import parse as parse_version
 from tlz import identity
 
 import dask
-
 from distributed.metrics import context_meter
 from distributed.utils import ensure_memoryview, nbytes
 

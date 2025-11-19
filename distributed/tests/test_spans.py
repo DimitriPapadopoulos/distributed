@@ -5,9 +5,8 @@ import asyncio
 import pytest
 
 import dask
-from dask import delayed
-
 import distributed
+from dask import delayed
 from distributed import Client, Event, Worker, span, wait
 from distributed.diagnostics.plugin import SchedulerPlugin
 from distributed.utils_test import (

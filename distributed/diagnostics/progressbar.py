@@ -14,7 +14,6 @@ from tornado.ioloop import IOLoop
 
 import dask
 from dask.utils import key_split
-
 from distributed.client import default_client, futures_of
 from distributed.core import (
     CommClosedError,

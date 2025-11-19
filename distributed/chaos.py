@@ -7,7 +7,6 @@ import sys
 from typing import Literal
 
 from dask.utils import parse_timedelta
-
 from distributed.diagnostics.plugin import WorkerPlugin
 
 

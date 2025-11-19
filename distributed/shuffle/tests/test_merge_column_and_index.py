@@ -19,7 +19,6 @@ pd = pytest.importorskip("pandas")
 import dask
 import dask.dataframe as dd
 from dask.dataframe.utils import assert_eq
-
 from distributed.utils_test import gen_cluster
 
 

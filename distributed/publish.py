@@ -5,7 +5,6 @@ from collections import defaultdict
 from collections.abc import MutableMapping
 
 from dask.utils import stringify
-
 from distributed.utils import log_errors
 
 

@@ -10,7 +10,6 @@ import pytest
 from tlz import concat, sliding_window
 
 from dask import delayed
-
 from distributed import Client, Nanny, Worker, wait
 from distributed.chaos import KillWorker
 from distributed.compatibility import WINDOWS
@@ -283,7 +282,6 @@ async def test_no_delay_during_large_transfer(c, s, w):
     from functools import partial
 
     from dask.diagnostics import ResourceProfiler
-
     from distributed.counter import Digest
 
     for server in [s, w]:

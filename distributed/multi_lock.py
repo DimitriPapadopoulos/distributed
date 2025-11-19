@@ -7,7 +7,6 @@ from collections import defaultdict
 from collections.abc import Hashable
 
 from dask.utils import parse_timedelta
-
 from distributed.client import Client
 from distributed.utils import TimeoutError, log_errors, wait_for
 from distributed.worker import get_worker

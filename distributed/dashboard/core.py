@@ -10,7 +10,6 @@ from bokeh.server.util import create_hosts_allowlist
 from packaging.version import parse as parse_version
 
 import dask
-
 from distributed.dashboard.utils import BOKEH_VERSION
 from distributed.versions import BOKEH_REQUIREMENT
 

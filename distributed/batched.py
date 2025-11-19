@@ -10,7 +10,6 @@ from tornado.ioloop import IOLoop
 
 import dask
 from dask.utils import parse_timedelta
-
 from distributed.core import CommClosedError
 from distributed.metrics import time
 

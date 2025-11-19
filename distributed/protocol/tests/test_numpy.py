@@ -7,7 +7,6 @@ import pytest
 np = pytest.importorskip("numpy")
 
 from dask.utils import ensure_bytes, tmpfile
-
 from distributed.protocol import (
     decompress,
     deserialize,

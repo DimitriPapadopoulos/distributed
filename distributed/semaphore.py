@@ -9,7 +9,6 @@ from collections import defaultdict, deque
 
 import dask
 from dask.utils import parse_timedelta
-
 from distributed.compatibility import PeriodicCallback
 from distributed.metrics import time
 from distributed.utils import Deadline, SyncMethodMixin, log_errors, wait_for

@@ -10,7 +10,6 @@ da = pytest.importorskip("dask.array")
 from numpy.testing import assert_array_equal
 
 import dask
-
 from distributed.diagnostics import SchedulerPlugin
 from distributed.utils_test import gen_cluster
 

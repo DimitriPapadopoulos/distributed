@@ -67,7 +67,6 @@ from dask.utils import (
     parse_bytes,
     parse_timedelta,
 )
-
 from distributed.core import Status
 from distributed.dashboard.components import add_periodic_callback
 from distributed.dashboard.components.shared import (

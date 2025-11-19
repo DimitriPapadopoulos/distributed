@@ -10,7 +10,6 @@ import pytest
 
 import dask.config
 from dask.sizeof import sizeof
-
 from distributed import profile
 from distributed.compatibility import WINDOWS
 from distributed.metrics import meter

@@ -12,7 +12,6 @@ pynvml = pytest.importorskip("pynvml")
 
 import dask
 from dask.utils import ensure_unicode
-
 from distributed.diagnostics import nvml
 from distributed.utils_test import gen_cluster
 

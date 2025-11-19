@@ -12,7 +12,6 @@ import pytest
 from tornado.httpclient import AsyncHTTPClient
 
 from dask.system import CPU_COUNT
-
 from distributed import Client, LocalCluster, Nanny, Worker, get_client
 from distributed.compatibility import LINUX, asyncio_run
 from distributed.config import get_loop_factory

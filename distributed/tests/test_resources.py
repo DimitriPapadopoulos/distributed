@@ -6,7 +6,6 @@ import pytest
 
 import dask
 from dask import delayed
-
 from distributed import Lock, Worker
 from distributed.client import wait
 from distributed.utils_test import NO_AMM, gen_cluster, inc, lock_inc, slowadd, slowinc

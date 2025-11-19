@@ -23,7 +23,6 @@ from bokeh.plotting import figure
 from tornado import gen
 
 import dask
-
 from distributed import profile
 from distributed.compatibility import WINDOWS
 from distributed.dashboard.components import DashboardComponent

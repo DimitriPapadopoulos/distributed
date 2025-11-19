@@ -14,7 +14,6 @@ from tornado.ioloop import IOLoop
 import dask.config
 from dask.utils import _deprecated, format_bytes, parse_timedelta, typename
 from dask.widgets import get_template
-
 from distributed.compatibility import PeriodicCallback
 from distributed.core import Status
 from distributed.deploy.adaptive import Adaptive

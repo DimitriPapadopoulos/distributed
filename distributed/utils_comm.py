@@ -15,7 +15,6 @@ import dask.config
 from dask._task_spec import TaskRef
 from dask.typing import Key
 from dask.utils import is_namedtuple_instance, parse_timedelta
-
 from distributed.core import ConnectionPool, rpc
 from distributed.utils import All
 

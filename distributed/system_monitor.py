@@ -9,7 +9,6 @@ import psutil
 import dask.config
 from dask.typing import NoDefault, no_default
 from dask.utils import parse_timedelta
-
 from distributed.compatibility import WINDOWS
 from distributed.diagnostics import nvml
 from distributed.metrics import monotonic, time

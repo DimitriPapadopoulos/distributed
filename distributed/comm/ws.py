@@ -22,7 +22,6 @@ from tornado.websocket import (
 )
 
 import dask
-
 from distributed.comm.addressing import parse_host_port, unparse_host_port
 from distributed.comm.core import (
     BaseListener,

@@ -7,7 +7,6 @@ from time import sleep
 import pytest
 
 import dask
-
 from distributed import Lock, get_client
 from distributed.metrics import time
 from distributed.utils_test import gen_cluster

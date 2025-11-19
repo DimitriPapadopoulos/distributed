@@ -9,7 +9,6 @@ dd = pytest.importorskip("dask.dataframe")
 pytest.importorskip("pyarrow")
 
 import dask
-
 from distributed.utils_test import gen_cluster
 
 

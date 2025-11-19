@@ -18,10 +18,9 @@ from time import sleep
 import requests
 from click.testing import CliRunner
 
-from dask.utils import tmpfile
-
 import distributed
 import distributed.cli.dask_scheduler
+from dask.utils import tmpfile
 from distributed import Client, Scheduler
 from distributed.compatibility import LINUX, WINDOWS
 from distributed.metrics import time

@@ -7,7 +7,6 @@ pytest.importorskip("asyncssh")
 import sys
 
 import dask
-
 from distributed import Client
 from distributed.compatibility import MACOS, WINDOWS
 from distributed.deploy.ssh import SSHCluster

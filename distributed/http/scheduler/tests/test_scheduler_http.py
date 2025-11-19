@@ -11,7 +11,6 @@ from tornado.httpclient import AsyncHTTPClient, HTTPClientError
 
 import dask.config
 from dask.sizeof import sizeof
-
 from distributed import Event, Lock, Scheduler
 from distributed.client import Client, wait
 from distributed.core import Status

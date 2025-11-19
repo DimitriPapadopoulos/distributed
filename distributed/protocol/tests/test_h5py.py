@@ -8,7 +8,6 @@ import pytest
 h5py = pytest.importorskip("h5py")
 
 from dask.utils import tmpfile
-
 from distributed.protocol import deserialize, serialize
 
 
@@ -85,7 +84,6 @@ def test_raise_error_on_serialize_write_permissions():
 
 
 import dask.array as da
-
 from distributed.utils_test import gen_cluster
 
 

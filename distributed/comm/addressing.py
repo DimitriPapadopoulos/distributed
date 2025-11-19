@@ -3,7 +3,6 @@ from __future__ import annotations
 import itertools
 
 import dask
-
 from distributed.comm import registry
 from distributed.utils import get_ip_interface
 

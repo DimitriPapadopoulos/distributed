@@ -3,7 +3,6 @@ from __future__ import annotations
 import pytest
 
 from dask.sizeof import sizeof
-
 from distributed.sizeof import safe_sizeof
 from distributed.utils_test import captured_logger
 

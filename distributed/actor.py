@@ -11,7 +11,6 @@ from typing import Generic, Literal, NoReturn, TypeVar
 from tornado.ioloop import IOLoop
 
 from dask._task_spec import TaskRef
-
 from distributed.client import Future
 from distributed.protocol import to_serialize
 from distributed.utils import LateLoopEvent, iscoroutinefunction, sync, thread_state

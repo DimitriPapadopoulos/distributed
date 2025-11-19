@@ -13,9 +13,8 @@ import pytest
 from tlz import merge
 
 import dask.config
-from dask.utils import format_bytes, parse_bytes
-
 import distributed.system
+from dask.utils import format_bytes, parse_bytes
 from distributed import Client, Event, KilledWorker, Nanny, Scheduler, Worker, wait
 from distributed.compatibility import MACOS, WINDOWS
 from distributed.core import Status

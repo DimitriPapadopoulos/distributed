@@ -127,7 +127,6 @@ from dask.layers import Layer
 from dask.tokenize import tokenize
 from dask.typing import Key
 from dask.utils import parse_bytes
-
 from distributed.core import PooledRPCCall
 from distributed.metrics import context_meter
 from distributed.shuffle._core import (

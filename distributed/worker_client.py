@@ -4,7 +4,6 @@ import contextlib
 import warnings
 
 import dask
-
 from distributed.metrics import time
 from distributed.threadpoolexecutor import rejoin, secede
 from distributed.worker import get_client, get_worker, thread_state

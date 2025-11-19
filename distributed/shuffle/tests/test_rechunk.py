@@ -24,7 +24,6 @@ from dask.array.rechunk import normalize_chunks, rechunk
 from dask.array.utils import assert_eq
 from dask.base import flatten
 from dask.utils import key_split
-
 from distributed import Event
 from distributed.protocol.utils_test import get_host_array
 from distributed.shuffle._core import ShuffleId

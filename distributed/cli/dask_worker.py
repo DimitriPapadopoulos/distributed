@@ -17,7 +17,6 @@ from tornado.ioloop import TimeoutError
 
 import dask
 from dask.system import CPU_COUNT
-
 from distributed import Nanny
 from distributed._signals import wait_for_signals
 from distributed.comm import get_address_host_port

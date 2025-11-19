@@ -36,7 +36,6 @@ from tornado.ioloop import IOLoop
 
 import dask
 from dask.typing import Key
-
 from distributed import Event, Scheduler, system
 from distributed.batched import BatchedSend
 from distributed.client import Client, _global_clients, default_client
@@ -80,9 +79,9 @@ from distributed.worker_state_machine import (
     InvalidTransition,
     SecedeEvent,
     StateMachineEvent,
+    WorkerState,
 )
 from distributed.worker_state_machine import TaskState as WorkerTaskState
-from distributed.worker_state_machine import WorkerState
 
 try:
     import dask.array  # register config

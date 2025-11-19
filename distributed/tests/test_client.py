@@ -46,7 +46,6 @@ from dask import delayed
 from dask.task_spec import Task, TaskRef
 from dask.tokenize import TokenizationError, tokenize
 from dask.utils import get_default_shuffle_method, parse_timedelta, tmpfile
-
 from distributed import (
     CancelledError,
     Event,

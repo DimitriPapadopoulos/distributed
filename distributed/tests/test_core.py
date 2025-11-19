@@ -15,7 +15,6 @@ import pytest
 from tornado.ioloop import IOLoop
 
 import dask
-
 from distributed.batched import BatchedSend
 from distributed.comm.core import CommClosedError, FatalCommClosedError
 from distributed.comm.registry import backends

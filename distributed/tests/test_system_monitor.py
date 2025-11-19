@@ -5,7 +5,6 @@ from time import sleep
 import pytest
 
 import dask
-
 from distributed.system_monitor import SystemMonitor
 
 

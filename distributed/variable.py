@@ -9,7 +9,6 @@ from contextlib import suppress
 from tlz import merge
 
 from dask.utils import parse_timedelta
-
 from distributed.client import Future
 from distributed.metrics import time
 from distributed.utils import Deadline, TimeoutError, log_errors, wait_for

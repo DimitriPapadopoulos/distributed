@@ -3,7 +3,6 @@ from __future__ import annotations
 import pytest
 
 import dask.datasets
-
 from distributed import Scheduler
 from distributed.shuffle.tests.utils import UNPACK_PREFIX
 from distributed.utils_test import gen_cluster

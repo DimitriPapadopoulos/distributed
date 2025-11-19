@@ -10,7 +10,6 @@ import tlz as toolz
 
 import dask
 from dask.distributed import Client, Nanny, Scheduler, SpecCluster, Worker
-
 from distributed.compatibility import WINDOWS
 from distributed.core import Status
 from distributed.deploy.spec import ProcessInterface, close_clusters, run_spec

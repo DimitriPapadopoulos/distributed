@@ -7,7 +7,6 @@ from unittest import mock
 import pytest
 
 from dask.typing import Key
-
 from distributed import Worker
 from distributed.shuffle._core import ShuffleId, id_from_key
 from distributed.shuffle._worker_plugin import ShuffleRun, _ShuffleRunManager
@@ -18,7 +17,6 @@ import dask
 import dask.dataframe as dd
 from dask.dataframe._compat import tm
 from dask.dataframe.utils import assert_eq
-
 from distributed import get_client
 
 try:

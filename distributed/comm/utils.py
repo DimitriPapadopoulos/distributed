@@ -5,7 +5,6 @@ import socket
 
 import dask
 from dask.utils import parse_bytes
-
 from distributed import protocol
 from distributed.sizeof import safe_sizeof
 from distributed.utils import get_ip, get_ipv6, nbytes, offload

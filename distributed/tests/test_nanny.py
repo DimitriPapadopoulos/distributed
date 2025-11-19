@@ -19,7 +19,6 @@ from tornado.ioloop import IOLoop
 
 import dask
 from dask.utils import tmpfile
-
 from distributed import Nanny, Scheduler, Worker, profile, rpc, wait, worker
 from distributed.compatibility import LINUX, WINDOWS
 from distributed.core import CommClosedError, Status

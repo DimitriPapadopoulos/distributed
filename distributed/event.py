@@ -7,7 +7,6 @@ from collections import defaultdict
 from contextlib import suppress
 
 from dask.utils import parse_timedelta
-
 from distributed.utils import TimeoutError, log_errors, wait_for
 from distributed.worker import get_client
 

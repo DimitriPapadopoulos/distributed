@@ -37,7 +37,6 @@ import dask.config
 from dask.system import CPU_COUNT
 from dask.typing import Key
 from dask.utils import format_bytes, parse_bytes, parse_timedelta
-
 from distributed import system
 from distributed.compatibility import WINDOWS, PeriodicCallback
 from distributed.core import Status

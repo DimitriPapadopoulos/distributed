@@ -10,7 +10,6 @@ from tornado.ioloop import IOLoop
 
 import dask.config
 from dask.utils import parse_timedelta
-
 from distributed.compatibility import PeriodicCallback
 from distributed.core import Status
 from distributed.deploy.adaptive_core import AdaptiveCore

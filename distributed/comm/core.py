@@ -11,7 +11,6 @@ from typing import Any, ClassVar
 
 import dask
 from dask.utils import parse_timedelta
-
 from distributed.comm import registry
 from distributed.comm.addressing import get_address_host, parse_address, resolve_address
 from distributed.metrics import time

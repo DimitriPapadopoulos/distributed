@@ -5,7 +5,6 @@ import asyncio
 import pytest
 
 from dask import delayed
-
 from distributed import Client
 from distributed.client import futures_of
 from distributed.metrics import time

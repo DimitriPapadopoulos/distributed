@@ -11,7 +11,6 @@ from typing import Any, Literal
 import pytest
 
 import dask.config
-
 from distributed import Event, Lock, Scheduler, wait
 from distributed.active_memory_manager import (
     ActiveMemoryManagerExtension,

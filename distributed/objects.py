@@ -6,7 +6,6 @@ from __future__ import annotations
 from urllib.parse import urlparse
 
 from dask.widgets import get_environment, get_template
-
 from distributed.utils import format_dashboard_link
 
 

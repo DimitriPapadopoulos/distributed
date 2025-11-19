@@ -6,7 +6,6 @@ import time
 import pytest
 
 import dask
-
 from distributed import Client
 from distributed.diagnostics import MemorySampler
 from distributed.utils_test import SizeOf, cluster, gen_cluster, gen_test

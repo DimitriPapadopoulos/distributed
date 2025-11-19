@@ -19,7 +19,6 @@ from tornado import gen
 
 import dask.config
 from dask.sizeof import sizeof
-
 from distributed import Client, Event, Nanny, Scheduler, Worker, config, default_client
 from distributed.batched import BatchedSend
 from distributed.comm.core import connect

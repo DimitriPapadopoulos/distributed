@@ -6,7 +6,6 @@ import pytest
 
 from dask import delayed
 from dask.utils import parse_bytes
-
 from distributed.utils import Deadline
 from distributed.utils_test import gen_cluster
 

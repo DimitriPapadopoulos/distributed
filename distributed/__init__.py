@@ -18,7 +18,6 @@ import weakref
 weakref.finalize(lambda: None, lambda: None)
 import dask
 from dask.config import config  # type: ignore
-
 from distributed.actor import Actor, ActorFuture, BaseActorFuture
 from distributed.client import (
     Client,

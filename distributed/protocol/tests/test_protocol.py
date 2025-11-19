@@ -6,7 +6,6 @@ import sys
 import pytest
 
 from dask.sizeof import sizeof
-
 from distributed.compatibility import WINDOWS
 from distributed.protocol import dumps, loads, msgpack, to_serialize
 from distributed.protocol.cuda import cuda_deserialize, cuda_serialize

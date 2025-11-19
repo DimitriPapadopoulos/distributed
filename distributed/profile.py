@@ -43,7 +43,6 @@ import tlz as toolz
 import dask.config
 from dask.typing import NoDefault, no_default
 from dask.utils import format_time, parse_timedelta
-
 from distributed.metrics import time
 from distributed.utils import color_of
 

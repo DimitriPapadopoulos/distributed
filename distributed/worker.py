@@ -57,7 +57,6 @@ from dask.utils import (
     tmpdir,
     typename,
 )
-
 from distributed import preloading, profile, utils
 from distributed.batched import BatchedSend
 from distributed.collections import LRU
@@ -75,9 +74,9 @@ from distributed.core import (
     context_meter_to_server_digest,
     error_message,
     pingpong,
+    send_recv,
 )
 from distributed.core import rpc as RPCType
-from distributed.core import send_recv
 from distributed.diagnostics import nvml, rmm
 from distributed.diagnostics.plugin import WorkerPlugin, _get_plugin_name
 from distributed.diskutils import WorkSpace

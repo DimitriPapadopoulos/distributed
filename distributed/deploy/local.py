@@ -8,7 +8,6 @@ import toolz
 
 from dask.system import CPU_COUNT
 from dask.widgets import get_template
-
 from distributed.deploy.spec import SpecCluster
 from distributed.deploy.utils import nprocesses_nthreads
 from distributed.nanny import Nanny

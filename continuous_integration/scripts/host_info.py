@@ -4,7 +4,6 @@ import numpy
 import psutil
 
 from dask.utils import format_bytes
-
 from distributed.utils import get_ip, get_ipv6, time
 from distributed.utils_test import has_ipv6
 

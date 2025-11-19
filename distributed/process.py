@@ -16,7 +16,6 @@ from tornado.concurrent import Future
 from tornado.ioloop import IOLoop
 
 import dask
-
 from distributed.utils import get_mp_context, wait_for
 
 if TYPE_CHECKING:

@@ -6,7 +6,6 @@ from contextlib import contextmanager
 import pytest
 
 import dask
-
 from distributed.comm import connect, listen
 from distributed.security import Security
 from distributed.utils_test import gen_test, get_cert, xfail_ssl_issue5601

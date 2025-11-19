@@ -7,7 +7,6 @@ from concurrent.futures import ThreadPoolExecutor
 import pytest
 
 import dask.config
-
 from distributed import Worker, wait
 from distributed.compatibility import LINUX
 from distributed.protocol import dumps, loads, maybe_compress, msgpack, to_serialize

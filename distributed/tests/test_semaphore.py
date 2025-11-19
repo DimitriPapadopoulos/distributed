@@ -11,7 +11,6 @@ import pytest
 
 import dask
 from dask.distributed import Client
-
 from distributed import Semaphore, fire_and_forget
 from distributed.core import ConnectionPool
 from distributed.metrics import time

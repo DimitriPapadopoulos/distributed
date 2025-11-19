@@ -16,7 +16,6 @@ from typing import TYPE_CHECKING, Any, ClassVar
 
 from dask.typing import Key
 from dask.utils import _deprecated_kwarg, funcname, tmpfile
-
 from distributed.protocol.pickle import dumps
 
 if TYPE_CHECKING:

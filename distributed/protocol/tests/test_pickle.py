@@ -10,7 +10,6 @@ import cloudpickle
 import pytest
 
 from dask.utils import tmpdir
-
 from distributed import profile
 from distributed.protocol import deserialize, serialize
 from distributed.protocol.pickle import HIGHEST_PROTOCOL, dumps, loads

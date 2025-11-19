@@ -23,7 +23,6 @@ from jinja2 import Environment, FileSystemLoader
 from tlz import merge, partition_all
 
 from dask.utils import format_bytes, format_time
-
 from distributed.dashboard.components import add_periodic_callback
 from distributed.dashboard.components.shared import (
     DashboardComponent,

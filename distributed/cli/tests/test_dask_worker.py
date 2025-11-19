@@ -12,7 +12,6 @@ import pytest
 from click.testing import CliRunner
 
 from dask.utils import tmpfile
-
 from distributed import Client
 from distributed.cli.dask_worker import _apportion_ports, main
 from distributed.compatibility import LINUX, WINDOWS

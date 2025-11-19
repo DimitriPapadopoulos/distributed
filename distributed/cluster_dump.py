@@ -11,7 +11,6 @@ from typing import IO, Any, Literal
 import msgpack
 
 from dask.typing import Key
-
 from distributed._stories import scheduler_story as _scheduler_story
 from distributed._stories import worker_story as _worker_story
 

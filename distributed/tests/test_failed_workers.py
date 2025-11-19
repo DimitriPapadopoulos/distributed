@@ -13,7 +13,6 @@ from tlz import first, merge, partition_all
 import dask.config
 from dask import delayed
 from dask.utils import parse_bytes
-
 from distributed import Client, KilledWorker, Nanny, get_worker, profile, wait
 from distributed.comm import CommClosedError
 from distributed.compatibility import MACOS
