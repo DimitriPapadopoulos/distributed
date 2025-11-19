@@ -547,7 +547,7 @@ async def test_actors_in_profile(c, s, a):
     for _ in range(5):
         await sleeper.sleep(0.200)
         if (
-            list(a.profile_recent["children"])[0].startswith("sleep")
+            next(iter(a.profile_recent["children"])).startswith("sleep")
             or "Sleeper.sleep" in a.profile_keys
         ):
             return

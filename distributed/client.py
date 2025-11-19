@@ -2667,7 +2667,7 @@ class Client(SyncMethodMixin):
 
         if unpack:
             assert len(out) == 1
-            out = list(out.values())[0]
+            out = next(iter(out.values()))
         return out
 
     def scatter(

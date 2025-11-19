@@ -1791,9 +1791,9 @@ async def test_upload_file_egg(c, s, a, b):
 
                 egg_root = os.path.join(dirname, "dist")
                 # first file ending with '.egg'
-                egg_name = [
+                egg_name = next(
                     fname for fname in os.listdir(egg_root) if fname.endswith(".egg")
-                ][0]
+                )
                 egg_path = os.path.join(egg_root, egg_name)
 
                 await c.upload_file(egg_path)

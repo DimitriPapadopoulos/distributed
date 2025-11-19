@@ -27,7 +27,7 @@ pynvml = pytest.importorskip("pynvml")
     },
 )
 async def test_rmm_metrics(c, s, *workers):
-    w = list(s.workers.values())[0]
+    w = next(iter(s.workers.values()))
     assert "rmm" in w.metrics
     assert w.metrics["rmm"]["rmm-used"] == 0
     assert w.metrics["rmm"]["rmm-total"] == parse_bytes("10MiB")

@@ -179,7 +179,7 @@ async def test_unexpected_closed_worker():
             assert len(cluster.workers) == 2
 
             # Close one
-            await list(cluster.workers.values())[0].close()
+            await next(iter(cluster.workers.values())).close()
             start = time()
             while len(cluster.workers) > 1:  # wait for messages to flow around
                 await asyncio.sleep(0.01)

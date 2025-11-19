@@ -187,7 +187,7 @@ async def test_adapt_quickly():
             await asyncio.sleep(0.01)
         assert len(adapt.log) == 2
         assert adapt.log[-1][1]["status"] == "up"
-        d = [x for x in adapt.log[-1] if isinstance(x, dict)][0]
+        d = next(x for x in adapt.log[-1] if isinstance(x, dict))
         assert 2 < d["n"] <= adapt.maximum
 
         while len(cluster.workers) < adapt.maximum:

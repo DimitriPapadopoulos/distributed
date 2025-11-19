@@ -1013,7 +1013,7 @@ async def test_connection_pool_detects_remote_close():
 
         # now close this connection on the *server*
         assert len(server._comms) == 1
-        server_conn = list(server._comms.keys())[0]
+        server_conn = next(iter(server._comms.keys()))
         await server_conn.close()
 
         # give the ConnectionPool some time to realize that the connection is closed

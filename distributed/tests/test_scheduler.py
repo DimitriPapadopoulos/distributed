@@ -4969,7 +4969,7 @@ async def test_refuse_to_schedule_huge_task(c, s, *workers, finalize):
         match += r".* you called client.compute()"
     else:
         bg = c.persist(bg.repartition(npartitions=1))
-        fut = list(c.futures_of(bg))[0]
+        fut = next(iter(c.futures_of(bg)))
 
     with pytest.raises(MemoryError, match=match):
         await fut

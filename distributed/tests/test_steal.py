@@ -1309,7 +1309,7 @@ async def test_reschedule_concurrent_requests_deadlock(c, s, *workers):
         await asyncio.sleep(0.01)
 
     # ready is a heap but we don't need last, just not the next
-    victim_key = list(w0.active_keys)[0]
+    victim_key = next(iter(w0.active_keys))
 
     victim_ts = s.tasks[victim_key]
 

@@ -56,8 +56,8 @@ def test_basic():
 
     assert d["count"] == 100
     assert "test_f" in str(d["description"])
-    g = [c for c in d["children"].values() if "test_g" in str(c["description"])][0]
-    h = [c for c in d["children"].values() if "test_h" in str(c["description"])][0]
+    g = next(c for c in d["children"].values() if "test_g" in str(c["description"]))
+    h = next(c for c in d["children"].values() if "test_h" in str(c["description"]))
 
     assert g["count"] < h["count"]
     assert 95 < g["count"] + h["count"] <= 100

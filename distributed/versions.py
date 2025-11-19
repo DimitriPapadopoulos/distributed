@@ -135,7 +135,7 @@ def error_message(scheduler, workers, source, source_name="Client"):
         if len(versions) <= 1:
             continue
         if len(worker_versions) == 1:
-            worker_versions = list(worker_versions)[0]
+            worker_versions = next(iter(worker_versions))
         elif len(worker_versions) == 0:
             worker_versions = None
 

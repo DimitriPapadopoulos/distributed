@@ -127,14 +127,14 @@ class Something(Worker):
 @gen_cluster(client=True, Worker=Nanny)
 async def test_nanny_worker_class(c, s, w1, w2):
     out = await c._run(lambda dask_worker=None: str(dask_worker.__class__))
-    assert "Worker" in list(out.values())[0]
+    assert "Worker" in next(iter(out.values()))
     assert w1.Worker is Worker
 
 
 @gen_cluster(client=True, Worker=Nanny, worker_kwargs={"worker_class": Something})
 async def test_nanny_alt_worker_class(c, s, w1, w2):
     out = await c._run(lambda dask_worker=None: str(dask_worker.__class__))
-    assert "Something" in list(out.values())[0]
+    assert "Something" in next(iter(out.values()))
     assert w1.Worker is Something
 
 

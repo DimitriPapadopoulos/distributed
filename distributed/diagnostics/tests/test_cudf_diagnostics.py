@@ -39,7 +39,7 @@ def force_spill():
     nthreads=[("127.0.0.1", 1)],
 )
 async def test_cudf_metrics(c, s, *workers):
-    w = list(s.workers.values())[0]
+    w = next(iter(s.workers.values()))
     assert "cudf" in w.metrics
     assert w.metrics["cudf"]["cudf-spilled"] == 0
 
