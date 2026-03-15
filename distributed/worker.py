@@ -1456,7 +1456,7 @@ class Worker(BaseWorker, ServerNode):
         self.start_services(self.ip)
 
         try:
-            listening_address = "%s%s:%d" % (self.listener.prefix, self.ip, self.port)
+            listening_address = f"{self.listener.prefix}{self.ip}:{self.port}"
         except Exception:
             listening_address = f"{self.listener.prefix}{self.ip}"
 
@@ -1466,7 +1466,7 @@ class Worker(BaseWorker, ServerNode):
             # only if name was not None
             logger.info("          Worker name: %26s", self.name)
         for k, v in self.service_ports.items():
-            logger.info("  {:>16} at: {:>26}".format(k, self.ip + ":" + str(v)))
+            logger.info("  {:>16} at: {:>26}".format(k, f"{self.ip}:{v}"))
         logger.info("Waiting to connect to: %26s", self.scheduler.address)
         logger.info("-" * 49)
         logger.info("              Threads: %26d", self.state.nthreads)
@@ -1477,7 +1477,7 @@ class Worker(BaseWorker, ServerNode):
             )
         logger.info("      Local Directory: %26s", self.local_directory)
 
-        setproctitle("dask worker [%s]" % self.address)
+        setproctitle(f"dask worker [{self.address}]")
 
         plugins_msgs = await asyncio.gather(
             *(

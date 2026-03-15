@@ -1378,17 +1378,8 @@ class Client(SyncMethodMixin):
         if addr:
             nworkers = info.get("n_workers", 0)
             nthreads = info.get("total_threads", 0)
-            text = "<%s: %r processes=%d threads=%d" % (
-                self.__class__.__name__,
-                addr,
-                nworkers,
-                nthreads,
-            )
             memory = info.get("total_memory", 0)
-            text += ", memory=" + format_bytes(memory)
-            text += ">"
-            return text
-
+            return f"<{self.__class__.__name__}: {addr!r} processes={nworkers} threads={nthreads}, memory={format_bytes(memory)}>"
         elif self.scheduler is not None:
             return f"<{self.__class__.__name__}: scheduler={self.scheduler.address!r}>"
         else:
@@ -2433,7 +2424,7 @@ class Client(SyncMethodMixin):
                         bad_keys.add(key)
                         bad_data[key] = None
                     else:  # pragma: no cover
-                        raise ValueError("Bad value, `errors=%s`" % errors)
+                        raise ValueError(f"Bad value, `errors={errors}`")
 
             keys = [k for k in keys if k not in bad_keys and k not in data]
 
@@ -5886,7 +5877,7 @@ class as_completed:
         with self.lock:
             for f in futures:
                 if not isinstance(f, (Future, BaseActorFuture)):
-                    raise TypeError("Input must be a future, got %s" % f)
+                    raise TypeError(f"Input must be a future, got {f}")
                 self.futures[f] += 1
                 self.loop.add_callback(self._track_future, f)
 

@@ -3104,15 +3104,15 @@ class TaskGroupProgress(DashboardComponent):
                 #      (ones without any compute during the relevant dt)
                 #   3. Colors the labels appropriately.
                 formatter = CustomJSHover(
-                    code="""
-                        const colormap = %s;
+                    code=f"""
+                        const colormap = {dict(zip(stackers, colors))};
                         const divs = [];
-                        for (let k of Object.keys(source.data)) {
+                        for (let k of Object.keys(source.data)) {{
                           const val = source.data[k][value];
                           const color = colormap[k];
-                          if (k === "time" || k === "nthreads" || val < 1.e-3) {
+                          if (k === "time" || k === "nthreads" || val < 1.e-3) {{
                             continue;
-                          }
+                          }}
                           const label = k.length >= 20 ? k.slice(0, 20) + '…' : k;
 
                           // Unshift so that the ordering of the labels is the same as
@@ -3127,7 +3127,7 @@ class TaskGroupProgress(DashboardComponent):
                               + '</div>'
                           )
 
-                        }
+                        }}
                         divs.unshift(
                           '<div>'
                             + '<span style="font-weight: bold; color: darkgrey;">nthreads: </span>'
@@ -3135,10 +3135,7 @@ class TaskGroupProgress(DashboardComponent):
                             + '</div>'
                         );
                         return divs.join('\\n')
-                        """
-                    % dict(
-                        zip(stackers, colors)
-                    ),  # sneak the color mapping into the callback
+                        """,  # sneak the color mapping into the callback
                     args={"source": self.source},
                 )
                 # Add the HoverTool to the top line renderer.
@@ -3378,13 +3375,13 @@ class TaskProgress(DashboardComponent):
         )
 
         self.root.title.text = (
-            "Progress -- total: %(all)s, "
-            "waiting: %(waiting)s, "
-            "queued: %(queued)s, "
-            "processing: %(processing)s, "
-            "in-memory: %(memory)s, "
-            "no-worker: %(no_worker)s, "
-            "erred: %(erred)s" % totals
+            "Progress -- total: {all}, "
+            "waiting: {waiting}, "
+            "queued: {queued}, "
+            "processing: {processing}, "
+            "in-memory: {memory}, "
+            "no-worker: {no_worker}, "
+            "erred: {erred}".format(**totals)
         )
 
 
@@ -4537,8 +4534,9 @@ class SchedulerLogs:
         else:
             logs_html = Log(
                 "\n".join(
-                    "%s - %s"
-                    % (datetime.fromtimestamp(time).strftime("%H:%M:%S.%f"), line)
+                    "{} - {}".format(
+                        datetime.fromtimestamp(time).strftime("%H:%M:%S.%f"), line
+                    )
                     for time, level, line in logs
                 )
             )._repr_html_()

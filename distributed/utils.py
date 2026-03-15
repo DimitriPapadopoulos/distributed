@@ -201,7 +201,7 @@ def _get_ip(host, port, family):
     except OSError as e:
         warnings.warn(
             "Couldn't detect a suitable IP address for "
-            "reaching %r, defaulting to hostname: %s" % (host, e),
+            f"reaching {host!r}, defaulting to hostname: {e}",
             RuntimeWarning,
         )
         return hostname_fallback()
@@ -1171,7 +1171,7 @@ def asciitable(columns, rows):
     widths = tuple(max(max(map(len, x)), len(c)) for x, c in zip(zip(*rows), columns))
     row_template = ("|" + (" %%-%ds |" * len(columns))) % widths
     header = row_template % tuple(columns)
-    bar = "+%s+" % "+".join("-" * (w + 2) for w in widths)
+    bar = "+{}+".format("+".join("-" * (w + 2) for w in widths))
     data = "\n".join(row_template % r for r in rows)
     return "\n".join([bar, header, bar, data, bar])
 
@@ -1260,7 +1260,7 @@ def command_has_keyword(cmd, k):
 
                 cmd = import_module(cmd)
             except ImportError:
-                raise ImportError("Module for command %s is not available" % cmd)
+                raise ImportError(f"Module for command {cmd} is not available")
 
         if isinstance(cmd.main, click.core.Command):
             cmd = cmd.main
@@ -1456,8 +1456,7 @@ def cli_keywords(
             if not has_keyword(cls, k) and not command_has_keyword(cmd, k):
                 if cls and cmd:
                     raise ValueError(
-                        "Neither class %s or module %s support keyword %s"
-                        % (typename(cls), typename(cmd), k)
+                        f"Neither class {typename(cls)} or module {typename(cmd)} support keyword {k}"
                     )
                 elif cls:
                     raise ValueError(
