@@ -560,7 +560,7 @@ class Cluster(SyncMethodMixin):
         return getattr(self, "_name", type(self).__name__)
 
     def __repr__(self):
-        text = "%s(%s, %r, workers=%d, threads=%d" % (
+        text = "{}({}, {!r}, workers={}, threads={}".format(
             self._cluster_class_name,
             self.name,
             self.scheduler_address,

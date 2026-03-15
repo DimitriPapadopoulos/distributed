@@ -291,7 +291,7 @@ class Server:
         self.handlers.update(handlers)
         if blocked_handlers is None:
             blocked_handlers = dask.config.get(
-                "distributed.%s.blocked-handlers" % type(self).__name__.lower(), []
+                f"distributed.{type(self).__name__.lower()}.blocked-handlers", []
             )
         self.blocked_handlers = blocked_handlers
         self.stream_handlers = {}
@@ -1227,7 +1227,7 @@ class rpc:
                     comm.abort()
 
     def __repr__(self):
-        return "<rpc to %r, %d comms>" % (self.address, len(self.comms))
+        return f"<rpc to {self.address!r}, {len(self.comms)} comms>"
 
 
 class PooledRPCCall:
@@ -1378,11 +1378,7 @@ class ConnectionPool:
         return self.active + sum(map(len, self.available.values()))
 
     def __repr__(self) -> str:
-        return "<ConnectionPool: open=%d, active=%d, connecting=%d>" % (
-            self.open,
-            self.active,
-            len(self._connecting),
-        )
+        return f"<ConnectionPool: open={self.open}, active={self.active}, connecting={len(self._connecting)}>"
 
     def __call__(
         self,

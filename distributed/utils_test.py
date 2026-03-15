@@ -1333,13 +1333,13 @@ async def assert_can_connect_from_everywhere_4_6(port, protocol="tcp", **kwargs)
     Check that the local *port* is reachable from all IPv4 and IPv6 addresses.
     """
     futures = [
-        assert_can_connect("%s://127.0.0.1:%d" % (protocol, port), **kwargs),
-        assert_can_connect("%s://%s:%d" % (protocol, get_ip(), port), **kwargs),
+        assert_can_connect(f"{protocol}://127.0.0.1:{port}", **kwargs),
+        assert_can_connect(f"{protocol}://{get_ip()}:{port}", **kwargs),
     ]
     if has_ipv6():
         futures += [
-            assert_can_connect("%s://[::1]:%d" % (protocol, port), **kwargs),
-            assert_can_connect("%s://[%s]:%d" % (protocol, get_ipv6(), port), **kwargs),
+            assert_can_connect(f"{protocol}://[::1]:{port}", **kwargs),
+            assert_can_connect(f"{protocol}://[{get_ipv6()}]:{port}", **kwargs),
         ]
     await asyncio.gather(*futures)
 
@@ -1349,16 +1349,14 @@ async def assert_can_connect_from_everywhere_4(port, protocol="tcp", **kwargs):
     Check that the local *port* is reachable from all IPv4 addresses.
     """
     futures = [
-        assert_can_connect("%s://127.0.0.1:%d" % (protocol, port), **kwargs),
-        assert_can_connect("%s://%s:%d" % (protocol, get_ip(), port), **kwargs),
+        assert_can_connect(f"{protocol}://127.0.0.1:{port}", **kwargs),
+        assert_can_connect(f"{protocol}://{get_ip()}:{port}", **kwargs),
     ]
     if has_ipv6():
-        futures += [
-            assert_cannot_connect("%s://[::1]:%d" % (protocol, port), **kwargs),
-            assert_cannot_connect(
-                "%s://[%s]:%d" % (protocol, get_ipv6(), port), **kwargs
-            ),
-        ]
+        futures.extend(
+            assert_cannot_connect(f"{protocol}://[::1]:{port}", **kwargs),
+            assert_cannot_connect(f"{protocol}://[{get_ipv6()}]:{port}", **kwargs),
+        )
     await asyncio.gather(*futures)
 
 
@@ -1366,13 +1364,13 @@ async def assert_can_connect_locally_4(port, **kwargs):
     """
     Check that the local *port* is only reachable from local IPv4 addresses.
     """
-    futures = [assert_can_connect("tcp://127.0.0.1:%d" % port, **kwargs)]
+    futures = [assert_can_connect(f"tcp://127.0.0.1:{port}", **kwargs)]
     if get_ip() != "127.0.0.1":  # No outside IPv4 connectivity?
-        futures += [assert_cannot_connect("tcp://%s:%d" % (get_ip(), port), **kwargs)]
+        futures += [assert_cannot_connect(f"tcp://{get_ip()}:{port}", **kwargs)]
     if has_ipv6():
         futures += [
-            assert_cannot_connect("tcp://[::1]:%d" % port, **kwargs),
-            assert_cannot_connect("tcp://[%s]:%d" % (get_ipv6(), port), **kwargs),
+            assert_cannot_connect(f"tcp://[::1]:{port}", **kwargs),
+            assert_cannot_connect(f"tcp://[{get_ipv6()}]:{port}", **kwargs),
         ]
     await asyncio.gather(*futures)
 
@@ -1383,10 +1381,10 @@ async def assert_can_connect_from_everywhere_6(port, **kwargs):
     """
     assert has_ipv6()
     futures = [
-        assert_cannot_connect("tcp://127.0.0.1:%d" % port, **kwargs),
-        assert_cannot_connect("tcp://%s:%d" % (get_ip(), port), **kwargs),
-        assert_can_connect("tcp://[::1]:%d" % port, **kwargs),
-        assert_can_connect("tcp://[%s]:%d" % (get_ipv6(), port), **kwargs),
+        assert_cannot_connect(f"tcp://127.0.0.1:{port}", **kwargs),
+        assert_cannot_connect(f"tcp://{get_ip()}:{port}", **kwargs),
+        assert_can_connect(f"tcp://[::1]:{port}", **kwargs),
+        assert_can_connect(f"tcp://[{get_ipv6()}]:{port}", **kwargs),
     ]
     await asyncio.gather(*futures)
 
@@ -1397,14 +1395,12 @@ async def assert_can_connect_locally_6(port, **kwargs):
     """
     assert has_ipv6()
     futures = [
-        assert_cannot_connect("tcp://127.0.0.1:%d" % port, **kwargs),
-        assert_cannot_connect("tcp://%s:%d" % (get_ip(), port), **kwargs),
-        assert_can_connect("tcp://[::1]:%d" % port, **kwargs),
+        assert_cannot_connect(f"tcp://127.0.0.1:{port}", **kwargs),
+        assert_cannot_connect(f"tcp://{get_ip()}:{port}", **kwargs),
+        assert_can_connect(f"tcp://[::1]:{port}", **kwargs),
     ]
     if get_ipv6() != "::1":  # No outside IPv6 connectivity?
-        futures += [
-            assert_cannot_connect("tcp://[%s]:%d" % (get_ipv6(), port), **kwargs)
-        ]
+        futures.append(assert_cannot_connect(f"tcp://[{get_ipv6()}]:{port}", **kwargs))
     await asyncio.gather(*futures)
 
 

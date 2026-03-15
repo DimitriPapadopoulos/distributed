@@ -63,7 +63,7 @@ class Manager:
             return self.listeners.get(addr)
 
     def new_address(self):
-        return "%s/%d/%s" % (self.ip, os.getpid(), next(self.addr_suffixes))
+        return f"{self.ip}/{os.getpid()}/{next(self.addr_suffixes)}"
 
     def validate_address(self, addr):
         """
@@ -72,8 +72,7 @@ class Manager:
         ip, pid, suffix = addr.split("/")
         if ip != self.ip or int(pid) != os.getpid():
             raise ValueError(
-                "inproc address %r does not match host (%r) or pid (%r)"
-                % (addr, self.ip, os.getpid())
+                f"inproc address {addr!r} does not match host ({self.ip!r}) or pid ({os.getpid()!r})"
             )
 
 

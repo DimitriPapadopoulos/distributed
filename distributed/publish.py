@@ -46,7 +46,7 @@ class PublishExtension:
     @log_errors
     def put(self, keys=None, data=None, name=None, override=False, client=None):
         if not override and name in self.datasets:
-            raise KeyError("Dataset %s already exists" % name)
+            raise KeyError(f"Dataset {name} already exists")
         self.scheduler.client_desires_keys(keys, f"published-{stringify(name)}")
         self.datasets[name] = {"data": data, "keys": keys}
         return {"status": "OK", "name": name}
