@@ -24,7 +24,7 @@ dependencies:
   - msgpack-python
   - netcdf4
   - paramiko
-  - pre-commit
+  - prek
   - prometheus_client
   - psutil
   - pyarrow
