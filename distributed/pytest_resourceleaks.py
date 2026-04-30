@@ -61,7 +61,7 @@ from distributed.metrics import time
 
 def pytest_addoption(parser):
     group = parser.getgroup("resource leaks")
-    known_checkers = ", ".join(sorted("'%s'" % s for s in all_checkers))
+    known_checkers = ", ".join(sorted(f"'{s}'" for s in all_checkers))
     group.addoption(
         "-L",
         "--leaks",

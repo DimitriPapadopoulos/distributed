@@ -219,7 +219,7 @@ class SystemMonitor:
         return result
 
     def __repr__(self) -> str:
-        return "<SystemMonitor: cpu: %d memory: %d MB fds: %s>" % (
+        return "<SystemMonitor: cpu: {} memory: {} MB fds: {}>".format(
             self.quantities["cpu"][-1],
             self.quantities["memory"][-1] / 1e6,
             "N/A" if WINDOWS else self.quantities["num_fds"][-1],

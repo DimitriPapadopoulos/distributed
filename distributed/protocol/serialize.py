@@ -445,8 +445,8 @@ def deserialize(header, frames, deserializers=None):
     name = header.get("serializer")
     if deserializers is not None and name not in deserializers:
         raise TypeError(
-            "Data serialized with %s but only able to deserialize "
-            "data with %s" % (name, str(list(deserializers)))
+            f"Data serialized with {name} but only able to deserialize "
+            f"data with {list(deserializers)!s}"
         )
     dumps, loads, wants_context = families[name]
     return loads(header, frames)
@@ -594,7 +594,7 @@ class ToPickle(Generic[T]):
         self.data = data
 
     def __repr__(self) -> str:
-        return "<ToPickle: %s>" % str(self.data)
+        return f"<ToPickle: {self.data!s}>"
 
     def __eq__(self, other: object) -> bool:
         return isinstance(other, type(self)) and other.data == self.data
